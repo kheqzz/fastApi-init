@@ -32,6 +32,16 @@ That's it! The installer will:
 
 After installation, you will be located in your new project directory. Edit `.env` and you can start developing immediately.
 
+## After Installation
+
+### Go to your project
+
+cd my_project
+
+### activate the venv
+
+source .venv/bin/activate
+
 ### Alternative: Clone first (if you prefer)
 
 ```bash
@@ -45,6 +55,9 @@ chmod +x install.sh
 
 # Go to your project
 cd my_project
+
+#activate the venv
+source .venv/bin/activate
 
 # Edit .env with your database URL and secret key
 uvicorn app.main:app --reload
