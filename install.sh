@@ -29,6 +29,22 @@ if [ -d "$PROJECT_DIR" ]; then
     exit 1
 fi
 
+# --- Check & install uv if not found ---
+if ! command -v uv &> /dev/null; then
+    echo "📥 Installing uv (Python package manager)..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh 2>/dev/null
+
+    # Make uv available in current shell
+    export PATH="$HOME/.local/bin:$PATH"
+
+    if ! command -v uv &> /dev/null; then
+        echo "❌ Error: Failed to install uv."
+        echo "   Install manually: curl -LsSf https://astral.sh/uv/install.sh | sh"
+        exit 1
+    fi
+    echo "✅ uv installed"
+fi
+
 echo "🚀 Creating new FastAPI project: $PROJECT_NAME"
 echo ""
 
@@ -76,12 +92,11 @@ cp -r "$SOURCE_DIR/app" "$PROJECT_DIR/"
 mkdir -p "$PROJECT_DIR/tests"
 cp -r "$SOURCE_DIR/tests/"* "$PROJECT_DIR/tests/" 2>/dev/null || true
 
-# --- Step 3: Initialize uv ---
-echo "3️⃣  Setting up uv and installing dependencies..."
+# --- Step 3: Install dependencies with uv ---
+echo "3️⃣  Installing dependencies with uv..."
 cd "$PROJECT_DIR"
 uv add fastapi uvicorn[standard] sqlalchemy[asyncio] asyncpg alembic \
-    pydantic-settings python-jose[cryptography] passlib[bcrypt] python-multipart \
-    2>/dev/null
+    pydantic-settings python-jose[cryptography] passlib[bcrypt] python-multipart
 
 # --- Step 4: Create .env ---
 echo "4️⃣  Creating .env file..."
@@ -104,6 +119,6 @@ echo ""
 echo "👉 Next steps:"
 echo "   cd $PROJECT_NAME"
 echo "   nano .env          # set DATABASE_URL and SECRET_KEY"
-echo "   uvicorn app.main:app --reload"
+echo "   uv run uvicorn app.main:app --reload"
 echo ""
 echo "🎉 Happy coding!"
