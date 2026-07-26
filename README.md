@@ -18,8 +18,10 @@ Boilerplate/initiator FastAPI production-ready with Clean Architecture.
 Just copy-paste this line in your terminal:
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh) my_project
+curl -sL https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh | bash -s my_project
 ```
+
+> Works on **bash**, **zsh**, and **fish** shell.
 
 That's it! The installer will:
 1. Download the latest project template from GitHub

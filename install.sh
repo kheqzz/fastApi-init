@@ -3,7 +3,7 @@
 # FastAPI Clean Architecture Installer
 # Usage: bash install.sh <project_name>
 # Or one-liner:
-#   bash <(curl -s https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh) my_project
+#   curl -sL https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh | bash -s my_project
 
 set -e
 
@@ -16,7 +16,7 @@ if [ -z "$1" ]; then
     echo "Usage: bash install.sh <project_name>"
     echo ""
     echo "One-liner:"
-    echo "  bash <(curl -s https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh) my_project"
+    echo "  curl -sL https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh | bash -s my_project"
     exit 1
 fi
 
