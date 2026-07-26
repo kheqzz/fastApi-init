@@ -1,0 +1,15 @@
+[project]
+name = "fastapi-clean-architecture"
+version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy[asyncio]",
+    "alembic",
+    "pydantic-settings",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-multipart",
+    "asyncpg>=0.31.0",
+]
+
