@@ -1,6 +1,6 @@
-# FastAPI Clean Architecture
+# FastAPI boilerplate
 
-Boilerplate/initiator FastAPI production-ready with Clean Architecture.
+just tool for helping me when starting fastApi project,thats it
 
 ## Features
 
@@ -18,12 +18,13 @@ Boilerplate/initiator FastAPI production-ready with Clean Architecture.
 Just copy-paste this line in your terminal:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh | bash -s my_project
+curl -sL https://raw.githubusercontent.com/kheqzz/fastApi-init/main/install.sh | bash -s fastApi-projects
 ```
 
 > Works on **bash**, **zsh**, and **fish** shell.
 
 That's it! The installer will:
+
 1. Download the latest project template from GitHub
 2. Create your new FastAPI project
 3. Install all dependencies
@@ -95,8 +96,6 @@ project_root/
 ├── pyproject.toml
 └── README.md
 ```
-
-See `CLAUDE.md` for detailed documentation.
 
 ## License
 
